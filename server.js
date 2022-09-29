@@ -26,7 +26,7 @@ function createNewNote(body, notesArray) {
 
 //gets the notes html page
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '/develop/public/notes.html'));
+    res.sendFile(path.join(__dirname, './develop/public/notes.html'));
 });
 
 //gets the notes api data
@@ -43,7 +43,7 @@ app.post('/api/notes', (req, res) => {
 
 //wildcard request that just returns anything that hasn't been declared a path yet to index.html
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/develop/public/index.html'));
+    res.sendFile(path.join(__dirname, './develop/public/index.html'));
 });
 
 app.listen(PORT, () => {
