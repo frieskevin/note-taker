@@ -11,14 +11,14 @@ const app = express();
 //middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('develop/public'));
+app.use(express.static('Develop/public'));
 
 //function to write new notes to notes array json
 function createNewNote(body, notesArray) {
     const note = body;
     notesArray.push(note);
     fs.writeFileSync(
-        path.join(__dirname, '/develop/db/db.json'),
+        path.join(__dirname, '/Develop/db/db.json'),
         JSON.stringify({notes: notesArray}, null, 2)
     );
     return note;
@@ -42,9 +42,9 @@ app.post('/api/notes', (req, res) => {
 });
 
 //returns the index.html page
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, './Develop/public/index.html'));
-// });
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './Develop/public/index.html'));
+});
 
 //wildcard request that just returns anything that hasn't been declared a path yet to index.html
 app.get('*', (req, res) => {
