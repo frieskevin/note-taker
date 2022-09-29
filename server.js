@@ -42,9 +42,9 @@ app.post('/api/notes', (req, res) => {
 });
 
 //returns the index.html page
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './Develop/public/index.html'));
-});
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, './Develop/public/index.html'));
+// });
 
 //wildcard request that just returns anything that hasn't been declared a path yet to index.html
 app.get('*', (req, res) => {
