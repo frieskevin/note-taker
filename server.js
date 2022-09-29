@@ -11,7 +11,7 @@ const app = express();
 //middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('develop'));
+app.use(express.static('develop/public'));
 
 //function to write new notes to notes array json
 function createNewNote(body, notesArray) {
@@ -43,7 +43,7 @@ app.post('/api/notes', (req, res) => {
 
 //returns the index.html page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './develop/public.index.html'));
+    res.sendFile(path.join(__dirname, './develop/public/index.html'));
 });
 
 //wildcard request that just returns anything that hasn't been declared a path yet to index.html
