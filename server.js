@@ -11,7 +11,7 @@ const app = express();
 //middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('./develop/public'));
+app.use(express.static('develop'));
 
 //function to write new notes to notes array json
 function createNewNote(body, notesArray) {
